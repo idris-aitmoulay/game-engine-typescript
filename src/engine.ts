@@ -1,12 +1,15 @@
 namespace TSE {
     export  class Engine {
         private _count: number = 0;
+        private _canvas: HTMLCanvasElement;
         public constructor(){
         }
 
         public start(): void {
             // @ts-ignore
-            GLUtilities.initialize();
+            this._canvas = GLUtilities.initialize();
+            // @ts-ignore
+            gl.clearColor(1,0,0,1);
             this.loop()
         }
 
